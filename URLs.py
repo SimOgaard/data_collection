@@ -26,8 +26,16 @@ class URLs:
         return drive_directory
         
     @staticmethod
-    def Upload():
+    def Upload(upload_file_dir:str, upload_file_destination:str = "/MyDrive/data_collection"):
         drive_directory = URLs.MountDrive()
+        full_dir = drive_directory + upload_file_destination
+
+        if not os.path.exists(full_dir):
+            os.mkdir(full_dir)
+
+        with tarfile.open(full_dir + "", "w:gz") as tar:
+            tar.add(upload_file_dir, arcname=os.path.basename(upload_file_dir))
+
         print(drive_directory)
 
     @staticmethod
