@@ -26,19 +26,21 @@ class URLs:
         return drive_directory
         
     @staticmethod
-    def Upload(upload_file_dir:str, upload_file_destination:str = "/MyDrive/data_collection"):
+    def Upload(upload_file:str, upload_file_destination:str = "/MyDrive/data_collection"):
+        ''' Tars local upload_file and uploads it to drive '''
         drive_directory = URLs.MountDrive()
         full_dir = drive_directory + upload_file_destination
 
         if not os.path.exists(full_dir):
             os.mkdir(full_dir)
 
-        full_dir += "/" + upload_file_dir.split("/")[-1].split(".")[0] + ".tar.gz"
+        full_dir += "/" + upload_file.split("/")[-1].split(".")[0] + ".tar.gz"
         with tarfile.open(full_dir, "w:gz") as tar:
-            tar.add(upload_file_dir, arcname=os.path.basename(upload_file_dir))
+            tar.add(upload_file, arcname=os.path.basename(upload_file))
 
     @staticmethod
     def Hemnet() -> tuple:
+        ''' Showcase of how you upload your dataset '''
         url:str = "https://drive.google.com/u/1/uc?id=1xXLhZaUryHoluEBmstBS-qCLu4vEbgw4&export=download"
         destination:str = "Hemnet.tar.gz"
         return url, destination
