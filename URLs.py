@@ -1,10 +1,18 @@
 from pathlib import Path
 import gdown
+import tarfile
+import os
 
 class URLs:
     @staticmethod
-    def Download(url, destination, quiet=False):
-        gdown.download(url, destination, quiet=quiet)
+    def Download(url, destination, extract=False, delete_tar=True):
+        gdown.download(url, destination, quiet=False)
+        if extract:
+            tar = tarfile.open(destination, "r:gz")
+            tar.extractall()
+            tar.close()
+            if (delete_tar):
+                os.remove(destination)
 
     @staticmethod
     def Hemnet() -> tuple:
