@@ -33,7 +33,7 @@ class URLs:
         if not os.path.exists(full_dir):
             os.mkdir(full_dir)
 
-        with tarfile.open(full_dir + "", "w:gz") as tar:
+        with tarfile.open(full_dir + full_dir.split("/")[-1].split(".")[0], "w:gz") as tar:
             tar.add(upload_file_dir, arcname=os.path.basename(upload_file_dir))
 
         print(drive_directory)
