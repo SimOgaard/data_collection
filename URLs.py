@@ -3,8 +3,8 @@ import gdown
 
 class URLs:
     @staticmethod
-    def Download(url, destination):
-        gdown.download(url, destination)
+    def Download(url, destination, quiet=False):
+        gdown.download(url, destination, quiet=quiet)
 
     @staticmethod
     def Hemnet() -> tuple:
