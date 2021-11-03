@@ -44,3 +44,18 @@ class URLs:
         url:str = "https://drive.google.com/u/1/uc?id=1xXLhZaUryHoluEBmstBS-qCLu4vEbgw4&export=download"
         destination:str = "Hemnet.tar.gz"
         return url, destination
+
+    @staticmethod
+    def agNews() -> tuple:
+        ''' Showcase of how you upload your dataset '''
+        url:str = "https://drive.google.com/u/0/uc?id=1-1kd7EChNIM7O7W7zQGHtsKIQOaJer5a&export=download"
+        destination:str = "aq_newsdataset.tar.gz"
+        return url, destination
+
+    @staticmethod
+    def gutenberg() -> tuple:
+        ''' Showcase of how you upload your dataset '''
+        url:str = "https://drive.google.com/u/0/uc?id=1--ekQM1VFScRrUdWyCU2p6BS7Jvp5Kth&export=download"
+        destination:str = "gutenberg.tar.gz"
+        return url, destination
+    
