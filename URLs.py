@@ -53,9 +53,22 @@ class URLs:
         return url, destination
 
     @staticmethod
+    def agNewsSentiment() -> tuple:
+        ''' Showcase of how you upload your dataset '''
+        url:str = "https://drive.google.com/u/1/uc?id=1SqpQLDNE4BqdA8M2cFuDBkNSci8BZ0Fv&export=download"
+        destination:str = "ag_news_sentiment.tar.gz"
+        return url, destination
+
+    @staticmethod
     def gutenberg() -> tuple:
         ''' Showcase of how you upload your dataset '''
         url:str = "https://drive.google.com/u/0/uc?id=1--ekQM1VFScRrUdWyCU2p6BS7Jvp5Kth&export=download"
         destination:str = "gutenberg.tar.gz"
         return url, destination
     
+    @staticmethod
+    def gutenbergSentiment() -> tuple:
+        ''' Showcase of how you upload your dataset '''
+        url:str = "https://drive.google.com/u/1/uc?id=1picCONw6Jyg-0Bq6OsJjXG9OzyerLGBH&export=download"
+        destination:str = "gutenberg_sentiment.tar.gz"
+        return url, destination
